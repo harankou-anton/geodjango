@@ -80,7 +80,7 @@ DATABASES = {
        "ENGINE": 'django.contrib.gis.db.backends.postgis',
        "NAME": "geodjango",
        "USER": "geodjango",
-       "PASSWORD": os.getenv('POSTGRES_PASSWORD'),
+       "PASSWORD": os.getenv('POSTGRES_PASSWORD', 'geodjango'),
        "HOST": "localhost",
        "PORT": 5432,
    }
@@ -128,3 +128,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+GEOS_LIBRARY_PATH = '/home/anton-harankou/geos-3.11.0/build/lib/libgeos_c.so'
+GDAL_LIBRARY_PATH = '/home/anton-harankou/gdal-3.5.3/.libs/libgdal.so'
